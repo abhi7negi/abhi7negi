@@ -22,8 +22,6 @@ function ContactList(props) {
   return (
     <div>
         {renderedList}
-
-
     </div>
     
   )

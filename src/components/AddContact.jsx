@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const AddContact = (props) => {
 
@@ -6,14 +7,17 @@ const AddContact = (props) => {
 
     const [email,setEmail]=useState('');
 
-    function submitHandler(e){
-        e.preventDefault();
+    const navigate = useNavigate();
 
+    function submitHandler(e){
+    
+        e.preventDefault();
+        
         const state={name:name,email:email}
 
              props.getContact(state)
-
-         
+            navigate('/');
+   
     }
   return (
     <div>
@@ -34,3 +38,6 @@ const AddContact = (props) => {
 }
 
 export default AddContact
+
+           
+
